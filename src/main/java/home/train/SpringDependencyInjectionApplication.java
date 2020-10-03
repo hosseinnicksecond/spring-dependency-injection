@@ -15,6 +15,10 @@ public class SpringDependencyInjectionApplication {
 
 		ApplicationContext context=SpringApplication.run(SpringDependencyInjectionApplication.class, args);
 
+		System.out.println("--- Primary");
+		myController myController=(myController)context.getBean("myController");
+		System.out.println(myController.sayHello());
+
 		System.out.println("--- Constructor");
 		constructorInjectionDependency DIConstructor=
 				(constructorInjectionDependency) context.getBean("constructorInjectionDependency");

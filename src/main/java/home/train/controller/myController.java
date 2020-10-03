@@ -1,13 +1,18 @@
 package home.train.controller;
 
+import home.train.sevice.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class myController {
 
-    public String sayHello(){
-        System.out.println("Hello World !!!");
+    private final GreetingService service;
 
-        return "honey, don't leave me";
+    public myController(GreetingService service) {
+        this.service = service;
+    }
+
+    public String sayHello(){
+        return service.sayHello();
     }
 }
