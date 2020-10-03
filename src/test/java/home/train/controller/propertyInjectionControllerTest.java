@@ -1,6 +1,6 @@
 package home.train.controller;
 
-import home.train.sevice.GreetingServiceImplEng;
+import home.train.sevice.GreetingServiceImpProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class propertyInjectionControllerTest {
     void setup(){
         controller= new propertyInjectionController();
 
-        controller.service=new GreetingServiceImplEng();
+        controller.service=new GreetingServiceImpProperties();
     }
 
     @Test

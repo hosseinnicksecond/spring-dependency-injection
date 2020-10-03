@@ -1,6 +1,6 @@
 package home.train.controller;
 
-import home.train.sevice.GreetingServiceImplEng;
+import home.train.sevice.GreetingServiceImpSetter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class setterInjectionControllerTest {
     @BeforeEach
     void setUp() {
         controller= new setterInjectionController();
-        controller.setService(new GreetingServiceImplEng());
+        controller.setService(new GreetingServiceImpSetter());
     }
 
     @Test

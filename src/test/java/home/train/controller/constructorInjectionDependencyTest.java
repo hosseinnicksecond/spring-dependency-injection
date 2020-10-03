@@ -1,6 +1,6 @@
 package home.train.controller;
 
-import home.train.sevice.GreetingServiceImplEng;
+import home.train.sevice.GreetingServiceImpConstructor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class constructorInjectionDependencyTest {
 
     @BeforeEach
     void setUp() {
-        controller= new constructorInjectionDependency(new GreetingServiceImplEng());
+        controller= new constructorInjectionDependency(new GreetingServiceImpConstructor());
     }
 
     @Test
