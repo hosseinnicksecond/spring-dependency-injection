@@ -29,7 +29,7 @@ public class GreetingServiceConfig {
     }
     @Bean
     @Primary
-    @Profile("fr")
+    @Profile("gr")
     public GreetingService getGreetingServiceGerman(GreetingFactoryBean factoryBean){
         return factoryBean.createGreetingService("gr");
     }
