@@ -1,10 +1,7 @@
 package home.train.controller;
 
-import home.train.sevice.GreetingServiceImpProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class propertyInjectionControllerTest {
 
