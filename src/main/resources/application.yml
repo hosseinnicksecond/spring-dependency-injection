@@ -1,0 +1,5 @@
+train:
+    jms:
+        name:  mary
+        password: test123
+        url:  someUrl

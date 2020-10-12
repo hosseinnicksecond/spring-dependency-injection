@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySource({"classpath:dataBase.properties", "classpath:Jms.properties"})
+@PropertySource("classpath:dataBase.properties")
 public class PropertyConfig {
 
     @Value("${train.username}")

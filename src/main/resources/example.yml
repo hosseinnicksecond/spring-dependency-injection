@@ -1,0 +1,10 @@
+#some comment
+
+name: hossein
+
+names:
+    -sarah
+    -honey
+
+truth: yes
+more_truth: True
