@@ -5,17 +5,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @PropertySource("classpath:dataBase.properties")
 public class PropertyConfig {
 
-    @Value("train.username")
-     private String name;
-    @Value("train.password")
-     private String password;
-    @Value("train.url")
-     private String url;
+    @Value("${train.username}")
+      String name;
+    @Value("${train.password}")
+     String password;
+    @Value("${train.url}")
+     String url;
 
     @Bean
      public fakeDataSource getFakeDataSource(){
@@ -24,5 +25,11 @@ public class PropertyConfig {
          dataSource.setPassword(password);
          dataSource.setURL(url);
          return dataSource;
+     }
+
+     @Bean
+     public PropertySourcesPlaceholderConfigurer placeholder(){
+        PropertySourcesPlaceholderConfigurer placeholderConfigurer= new PropertySourcesPlaceholderConfigurer();
+        return placeholderConfigurer;
      }
 }
