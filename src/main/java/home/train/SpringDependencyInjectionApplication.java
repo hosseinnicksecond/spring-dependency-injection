@@ -2,6 +2,7 @@ package home.train;
 
 import home.train.controller.myController;
 import home.train.exampleBean.fakeDataSource;
+import home.train.exampleBean.fakeJmsBroker;
 import home.train.sevice.color;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +20,10 @@ public class SpringDependencyInjectionApplication {
 		fakeDataSource dataSource=context.getBean(fakeDataSource.class);
 
 		System.out.println(color.ANSI_RED+dataSource.getName());
+
+		fakeJmsBroker broker= context.getBean(fakeJmsBroker.class);
+
+		System.out.println(broker.getName());
 
 	}
 

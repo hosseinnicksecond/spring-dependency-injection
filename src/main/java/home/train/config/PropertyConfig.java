@@ -1,6 +1,7 @@
 package home.train.config;
 
 import home.train.exampleBean.fakeDataSource;
+import home.train.exampleBean.fakeJmsBroker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySource("classpath:dataBase.properties")
+@PropertySource({"classpath:dataBase.properties", "classpath:Jms.properties"})
 public class PropertyConfig {
 
     @Value("${train.username}")
@@ -17,6 +18,22 @@ public class PropertyConfig {
      String password;
     @Value("${train.url}")
      String url;
+
+    @Value("${train.jms.name}")
+    String JmsName;
+    @Value("${train.jms.password}")
+    String JmsPassword;
+    @Value("{train.jms.url}")
+    String JmsUrl;
+
+    @Bean
+    public fakeJmsBroker fakeJmsBroker(){
+        fakeJmsBroker broker=new fakeJmsBroker();
+        broker.setName(JmsName);
+        broker.setPassword(JmsPassword);
+        broker.setUrl(JmsUrl);
+        return broker;
+    }
 
     @Bean
      public fakeDataSource getFakeDataSource(){
@@ -28,7 +45,7 @@ public class PropertyConfig {
      }
 
      @Bean
-     public PropertySourcesPlaceholderConfigurer placeholder(){
+     public static PropertySourcesPlaceholderConfigurer placeholder(){
         PropertySourcesPlaceholderConfigurer placeholderConfigurer= new PropertySourcesPlaceholderConfigurer();
         return placeholderConfigurer;
      }
