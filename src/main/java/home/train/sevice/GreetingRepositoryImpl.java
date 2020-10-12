@@ -1,19 +1,22 @@
 package home.train.sevice;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GreetingRepositoryImpl implements GreetingRepository {
 
     @Override
     public String GetEnglishGreeting() {
-        return "hello - primary Greeting Service";
+        return color.ANSI_RED+"hello - primary Greeting Service";
     }
 
     @Override
     public String GetGermanGreeting() {
-        return "bonjour - service d'accueil principal";
+        return color.ANSI_BLUE+"Hallo - primärer Begrüßungsdienst";
     }
 
     @Override
     public String GetFranceGreeting() {
-        return "Hallo - primärer Begrüßungsdienst";
+        return  color.ANSI_CYAN+"bonjour - service d'accueil principal";
     }
 }

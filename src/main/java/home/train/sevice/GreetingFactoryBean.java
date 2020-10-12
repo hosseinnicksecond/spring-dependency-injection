@@ -11,8 +11,8 @@ public class GreetingFactoryBean {
     public GreetingService createGreetingService(String lang){
 
         switch (lang){
-            case "en":
-                return new PrimaryGreetingServiceEnglish(repository);
+//            case "en":
+//                return new PrimaryGreetingServiceEnglish(repository);
             case "fr":
                 return new PrimaryGreetingFranceService(repository);
             case "gr":

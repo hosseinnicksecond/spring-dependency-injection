@@ -2,9 +2,8 @@ package home.train.sevice;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class CustomBeanPostProcessor implements BeanPostProcessor {
 
     @Override
