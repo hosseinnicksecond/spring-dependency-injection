@@ -2,4 +2,10 @@ train:
     jms:
         name:  mary
         password: test123
-        url:  someUrl
+        url:  someUr
+---
+spring:
+      profile: de
+train:
+    jms:
+     name: mary@@DE
